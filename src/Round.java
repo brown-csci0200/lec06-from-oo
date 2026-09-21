@@ -7,7 +7,8 @@ public class Round implements IRound {
     IRound rightContest; // right winner won this round
 
     Round(IRound left, IRound right, String w) {
-        // We don't want to allow "null" anymore:
+        // We don't want to allow "null" anymore. More on exceptions, soon.
+        // (This isn't necessarily the best choice of exception once we know more.)
         if(left == null) throw new IllegalArgumentException();
         if(right == null) throw new IllegalArgumentException();
         this.leftContest = left;

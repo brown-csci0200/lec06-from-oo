@@ -1,10 +1,10 @@
 package src;
 
-/** Keeping this in the same file for brevity */
+/** Keeping class definitions in the same file for brevity */
 class RoundC {
-    String winner;  // moved this first since it isn’t recursive
-    RoundC leftContest; // flavor1 won this round
-    RoundC rightContest; // flavor2 won this round
+    String winner;
+    RoundC leftContest;
+    RoundC rightContest;
 
     public RoundC(RoundC left, RoundC right, String w) {
         this.winner = w;
@@ -12,16 +12,23 @@ class RoundC {
         this.rightContest = right;
     }
 
-    /** First attempt. What did we forget vs. the record version of this method? */
-//    public int roundsWon1(String flavor) {
-//        if (this.winner.equals(flavor))
-//            return 1 +
-//                    this.leftContest.roundsWon1(flavor) +
-//                    this.rightContest.roundsWon1(flavor);
-//        else
-//            return this.leftContest.roundsWon1(flavor) +
-//                    this.rightContest.roundsWon1(flavor);
-//    }
+    /** First attempt... */
+/*    public int roundsWon1(String flavor) {
+
+        if (this.winner.equals(flavor))
+            return 1 +
+                    this.leftContest.roundsWon1(flavor) +
+                    this.rightContest.roundsWon1(flavor);
+        else
+            return this.leftContest.roundsWon1(flavor) +
+                    this.rightContest.roundsWon1(flavor);
+    } */
+
+
+
+
+
+
 
     /** Fixing... */
     public int roundsWon1(String flavor) {
@@ -39,7 +46,7 @@ class RoundC {
 
 }
 
-/** Try 2: Let's make a class. */
+/** Try 2: Let's make a class with a roundsWon method. */
 public class Try2 {
     public static void main(String[] args) {
         RoundC contestC = new RoundC(
